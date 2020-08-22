@@ -19,7 +19,7 @@
     <packaging>pom</packaging><!--父工程-->
     <version>0.0.1-SNAPSHOT</version>
     <name>guli_parent</name>
-    <description>Demo project for Spring Boot</description>
+    <description>com.atguigu.juc.Demo project for Spring Boot</description>
 
 
 
@@ -204,10 +204,17 @@
                 <artifactId>canal.client</artifactId>
                 <version>${canal.client.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>3.2.6</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
+        <finalName>guli</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

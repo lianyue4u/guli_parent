@@ -56,7 +56,7 @@ public class CodeGenerator {
         pc.setMapper("mapper");
         mpg.setPackageInfo(pc);
 
-        // 5、策略配置
+        // 5、策略配置, 表名等
         StrategyConfig strategy = new StrategyConfig();
         strategy.setInclude("edu_chapter","edu_video");
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略

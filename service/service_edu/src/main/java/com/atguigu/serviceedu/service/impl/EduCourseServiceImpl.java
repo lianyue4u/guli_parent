@@ -16,6 +16,7 @@ import com.atguigu.serviceedu.service.EduCourseDescriptionService;
 import com.atguigu.serviceedu.service.EduCourseService;
 import com.atguigu.serviceedu.service.EduVideoService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -39,6 +40,8 @@ import java.util.Map;
 @Service
 public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse> implements EduCourseService {
 
+
+    //EducouserMapper
 
     @Autowired
     private EduCourseDescriptionService eduCourseDescriptionService;
@@ -114,7 +117,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         QueryWrapper<EduVideo> wrapperVideoId = new QueryWrapper<>();
         wrapperVideoId.eq("course_id",courseId);
         List<EduVideo> list = videoService.list(wrapperVideoId);
-        //封装需要山鹑的视频
+        //封装需要删除的视频
         List<String> videoIds = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             EduVideo eduVideo = list.get(i);

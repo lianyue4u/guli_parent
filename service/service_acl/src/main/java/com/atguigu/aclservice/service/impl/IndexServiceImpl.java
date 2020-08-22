@@ -7,10 +7,12 @@ import com.atguigu.aclservice.service.IndexService;
 import com.atguigu.aclservice.service.PermissionService;
 import com.atguigu.aclservice.service.RoleService;
 import com.atguigu.aclservice.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.sql.Wrapper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +56,7 @@ public class IndexServiceImpl implements IndexService {
 
         //根据用户id获取操作权限值
         List<String> permissionValueList = permissionService.selectPermissionValueByUserId(user.getId());
+
         redisTemplate.opsForValue().set(username, permissionValueList);
 
         result.put("name", user.getUsername());

@@ -26,7 +26,7 @@ public class IndexController {
      */
     @GetMapping("info")
     public R info(){
-        //获取当前登录用户用户名
+        //获取当前登录用户用户名procedure
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         Map<String, Object> userInfo = indexService.getUserInfo(username);
         return R.ok().data(userInfo);

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 @MapperScan("com.atguigu.aclservice.mapper")
 public class ServiceAclApplication {
 
+    //profile duration
     public static void main(String[] args) {
         SpringApplication.run(ServiceAclApplication.class, args);
     }
